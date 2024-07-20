@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: ProjectManagementSystem
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Rajat19081996&
+    url: jdbc:mysql://localhost:3306/pms
+server:
+  shutdown: graceful
+  port: 6969
