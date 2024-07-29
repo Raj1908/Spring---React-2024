@@ -46,7 +46,7 @@ public class UserService {
         for (User user : users) {
             if (user.getEmail().equals(username)) {
                 users.remove(user);
-                break;
+                return;
             }
         }
         throw new NoSuchElementException("User not found");
