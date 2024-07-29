@@ -51,4 +51,14 @@ public class UserService {
         }
         throw new NoSuchElementException("User not found");
     }
+
+    public User updateUser(User updatedUser) {
+        for (User user : users) {
+            if (user.getEmail().equals(updatedUser.getEmail())) {
+                user.setFullName(updatedUser.getFullName());
+                return user;
+            }
+        }
+        throw new NoSuchElementException("User not found");
+    }
 }

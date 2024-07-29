@@ -63,4 +63,18 @@ public class UserController {
             return new ResponseEntity<>(userResponse, HttpStatus.BAD_REQUEST);
         }
     }
+
+    @PatchMapping
+    public ResponseEntity<UserResponse> updateUser(@RequestBody User updatedUser) {
+        UserResponse userResponse = new UserResponse();
+        try {
+            User updateUser = userService.updateUser(updatedUser);
+            userResponse.setMessage("User updated successfully");
+            userResponse.setUser(updateUser);
+            return new ResponseEntity<>(userResponse, HttpStatus.OK);
+        } catch (Exception e) {
+            userResponse.setMessage(e.getMessage());
+            return new ResponseEntity<>(userResponse, HttpStatus.BAD_REQUEST);
+        }
+    }
 }
