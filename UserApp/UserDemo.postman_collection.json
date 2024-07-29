@@ -72,6 +72,26 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/user/rajat@gmail.com",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"rajat@gmail.com"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

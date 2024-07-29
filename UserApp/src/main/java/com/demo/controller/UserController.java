@@ -50,4 +50,17 @@ public class UserController {
             return new ResponseEntity<>(userResponse, HttpStatus.BAD_REQUEST);
         }
     }
+
+    @DeleteMapping("/{username}")
+    public ResponseEntity<UserResponse> deleteUser(@PathVariable String username) {
+        UserResponse userResponse = new UserResponse();
+        try {
+            userService.deleteUser(username);
+            userResponse.setMessage("User deleted successfully");
+            return new ResponseEntity<>(userResponse, HttpStatus.OK);
+        } catch (Exception e) {
+            userResponse.setMessage(e.getMessage());
+            return new ResponseEntity<>(userResponse, HttpStatus.BAD_REQUEST);
+        }
+    }
 }

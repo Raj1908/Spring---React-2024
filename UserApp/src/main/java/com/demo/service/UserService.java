@@ -41,4 +41,14 @@ public class UserService {
         }
         throw new NoSuchElementException("User not found");
     }
+
+    public void deleteUser(String username) {
+        for (User user : users) {
+            if (user.getEmail().equals(username)) {
+                users.remove(user);
+                break;
+            }
+        }
+        throw new NoSuchElementException("User not found");
+    }
 }
